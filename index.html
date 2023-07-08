@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Recruitment</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/index.html">
+                <p>LOGO</p>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="/index.html" id="active">HOME</a>
+            <a href="/login.html">LOGIN</a>
+            <a href="/register.html">REGISTER</a>
+            <a href="/candidates.html">CANDIDATES</a>
+        </div>
+    </div>
+    <div class="hero">
+        <p>ONE STOP RECRUITMENT SOLUTION</p>
+        <button class="btn" onclick="handleClick()">GET STARTED</button>
+    </div>
+    <div class="page2">
+        <div class="container">
+            <div class="card animation" style="--i:0">
+                <span class="numbers" data-value="305">123</span>
+                <p>RECRUITERS</p>
+            </div>
+            <div class="card animation" style="--i:1">
+                <span class="numbers" data-value="856">123</span>
+                <p>CANDIDATES</p>
+            </div>
+            <div class="card animation" style="--i:2">
+                <span class="numbers" data-value="659">123</span>
+                <p>INTERVIEWS</p>
+            </div>
+        </div>
+        <div class="text animation">
+            <h1>Seamless Job Posting and Distribution</h1>
+            <p>The solution simplifies the process of posting job openings to various job boards, career sites, and
+                social media platforms.</p>
+        </div>
+    </div>
+</body>
+<script>
+    let animations = document.querySelectorAll(".animation");
+    let heroP = document.querySelector(".hero").children[0];
+    window.onscroll = () => {
+        animations.forEach((animate) => {
+            let top = window.scrollY;
+            let offset = animate.offsetTop - 700;
+            let height = animate.offsetHeight;
+
+            if (top >= offset && top < offset + height) {
+                animate.classList.add("show-animate");
+            }
+        });
+    };
+
+    setTimeout(() => {
+        heroP.classList.add("show-animate");
+    }, 500);
+
+    function handleClick() {
+        window.location = "/register.html";
+    }
+
+    //counter
+
+    let numbers = document.querySelectorAll(".numbers");
+    let interval = 5000;
+
+    numbers.forEach((number) => {
+        let startValue = 0;
+        let endValue = parseInt(number.getAttribute("data-value"));
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(() => {
+            startValue += 1;
+            number.textContent = startValue;
+            if (startValue == endValue) {
+                clearInterval(counter);
+            }
+        }, duration);
+    });
+</script>
+
+</html>

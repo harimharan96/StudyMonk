@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Recruitment</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/index.html">
+                <p>LOGO</p>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="/index.html">HOME</a>
+            <a href="/login.html">LOGIN</a>
+            <a href="/register.html" id="active">REGISTER</a>
+            <a href="/candidates.html">CANDIDATES</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <p>REGISTER</p>
+            <form>
+                <div class="user-box">
+                    <input type="email" name="" required="">
+                    <label>EMAIL</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>USERNAME</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="" required="">
+                    <label>PASSWORD</label>
+                </div>
+                <button class="btn">SUBMIT</button>
+            </form>
+            <p class="sign-up">Already have an account? <span><a href="/login.html">Login</a></span></p>
+        </div>
+        <div class="text-box">
+            <p class="head">
+                ONE STOP RECRUITMENT SOLUTION
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    let head = document.querySelector(".head");
+
+    setTimeout(() => {
+        head.classList.add("show-animate");
+    }, 500);
+</script>
+
+</html>
